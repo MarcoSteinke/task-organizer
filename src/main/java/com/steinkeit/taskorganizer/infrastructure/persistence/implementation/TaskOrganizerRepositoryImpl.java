@@ -7,8 +7,6 @@ import com.steinkeit.taskorganizer.infrastructure.persistence.mapper.TaskMapper;
 import com.steinkeit.taskorganizer.infrastructure.persistence.repository.TaskOrganizerCrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
 @Repository
 public class TaskOrganizerRepositoryImpl implements TaskOrganizerRepository {
 
@@ -19,7 +17,7 @@ public class TaskOrganizerRepositoryImpl implements TaskOrganizerRepository {
     }
 
     public void save(Task task) {
-        this.taskOrganizerCrudRepository.save(new TaskDTO(task.getId(), task.getName(), task.getDescription()));
+        this.taskOrganizerCrudRepository.save(new TaskDTO(task.id(), task.name(), task.description()));
     }
 
     public Task findById(Long id) {

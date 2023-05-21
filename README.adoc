@@ -1,0 +1,48 @@
+# Task Organizer:
+
+## Introduction:
+
+The "Task Organizer" is a project which which helps me in organizing tasks that I have to complete.
+There are different categories of tasks which can be set. Thus it gives a nice overview of what is yet
+to complete in the different categories. Tasks will be able to be shared between users in the future. Thus allowing
+the management of tasks between small groups or pairs of users. Previous tasks will remain as templates for new tasks.
+All tasks will be stored encrypted to maintain privacy.
+
+## Setup:
+
+### 1. Clone the repository:
+
+Clone the repository by using any git tool and run:
+
+    git clone git@github.com:MarcoSteinke/task-organizer.git
+
+### 2. Change username and password:
+
+Change the following values in the `application.properties`:
+
+```yml
+spring.datasource.username=user
+spring.datasource.password=password
+spring.security.user.name=user
+spring.security.user.password=password
+```
+
+Change the following values in the `docker-compose.yml`:
+
+```yml
+MYSQL_USER: 'user'
+MYSQL_PASSWORD: 'password'
+MYSQL_ROOT_PASSWORD: '234689$%DJv59084v5'
+```
+
+### 3. Start the database:
+
+Start the database configured in the `docker-compose.yml` by running:
+
+    docker-compose up
+
+### 4. Build and run the application:
+
+Run the application using the following command:
+
+    ./gradle bootRun
